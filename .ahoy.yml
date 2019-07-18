@@ -18,6 +18,10 @@ commands:
     usage: Start a shell inside TEST container.
     cmd: docker-compose exec test bash
 
+  cli-nginx:
+    usage: Start a shell inside TEST container.
+    cmd: docker-compose exec nginx sh
+
   run:
     usage: Run command inside TEST container.
     cmd: docker-compose exec -T test bash -c "$@"
@@ -30,10 +34,10 @@ commands:
     usage: Show Docker logs.
     cmd: docker-compose logs "$@"
 
-  ps:
-    usage: List running Docker containers.
-    cmd: docker-compose ps
-
+#  ps:
+#    usage: List running Docker containers.
+#    cmd: docker-compose ps
+#
   restart:
     usage: Restart Docker containers.
     cmd: docker-compose restart
@@ -43,12 +47,13 @@ commands:
     cmd: docker-compose stop "$@"
 
   install:
-    usage: Install the profile.
+    usage: Install the GovCMS profile.
     cmd: docker-compose exec -T test drush si -y govcms "$@"
 
-  login:
-    usage: Login to a website.
-    cmd: docker-compose exec -T test drush uli "$@"
+#
+#  login:
+#    usage: Login to a website.
+#    cmd: docker-compose exec -T test drush uli "$@"
 
   pull:
     usage: Pull latest docker images.
@@ -86,3 +91,5 @@ commands:
   test-phpunit:
     usage: Run PHPUnit tests.
     cmd: docker-compose exec test phpunit "$@"
+
+#hihihih
